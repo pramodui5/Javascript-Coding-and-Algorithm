@@ -479,7 +479,8 @@ function fibonacci(n){
 
  return fibo[n];
 } 
-
+```
+```
 **Output:**
 fibonacci(12); // 144
 ```
@@ -491,7 +492,8 @@ function fibonacci(n){
   else
     return fibonacci(n-1) + fibonacci (n-2);  
 }
-
+```
+```
 **Output:**
 fibonacci(12); // 144
 ```
