@@ -497,3 +497,368 @@ function fibonacci(n){
 ```
 fibonacci(12); // 144
 ```
+### Swap number without temp
+```
+function swapNumb(a, b){
+  console.log('before swap: ','a: ', a, 'b: ', b);
+  b = b -a;
+  a = a+ b;
+  b = a-b;
+  console.log('after swap: ','a: ', a, 'b: ', b);  
+}
+```
+**Output:**
+```
+swapNumb(2, 3);
+   = before swap:  a:  2 b:  3
+   = after swap:  a:  3 b:  2
+```
+
+### String reverse
+#### Example - 1
+```
+function reverse(str){
+  var rtnStr = '';
+  for(var i = str.length-1; i>=0;i--){
+    rtnStr +=str[i];
+  }
+  return rtnStr;
+}
+```
+Output:
+```
+reverse('you are a nice dude');
+  = "edud ecin a era uoy"
+```
+
+#### Example - 2
+```
+function reverse(str){
+  if(!str || str.length <2) return str;
+  
+  return str.split('').reverse().join('');
+}
+```
+
+#### Example - 3
+```
+function reverse(str){
+  var rtnStr = [];
+  if(!str || typeof str != 'string' || str.length < 2 ) return str;
+  
+  for(var i = str.length-1; i>=0;i--){
+    rtnStr.push(str[i]);
+  }
+  return rtnStr.join('');
+}
+```
+### Reverse words
+A quick solution with build in methods:
+```
+function reverseWords(str){
+  return str.split(' ').reverse();
+}
+```
+### Check palindrome
+#### Example -1
+```
+function isPalindrome(str){
+  var i, len = str.length;
+  for(i =0; i<len/2; i++){
+    if (str[i]!== str[len -1 -i])
+       return false;
+  }
+  return true;
+}
+```
+Output:
+```
+isPalindrome('madam'); // true
+isPalindrome('toyota'); // false
+```
+#### Example - 2
+Using build in method
+```
+function checkPalindrom(str) {
+    return str == str.split('').reverse().join('');
+}  
+```
+### Check Prime
+```
+function isPrime(n){
+  var divisor = 2;
+  while (n > divisor){
+    if(n % divisor == 0){
+     return false; 
+    }
+    else
+      divisor++;
+  }
+  return true;
+}
+```
+Output:
+```
+isPrime(137); // true
+isPrime(237); // false
+```
+
+### Prime Factors
+```
+function primeFactors(n){
+  var factors = [], 
+      divisor = 2;
+  
+  while(n>2){
+    if(n % divisor == 0){
+       factors.push(divisor); 
+       n= n/ divisor;
+    }
+    else{
+      divisor++;
+    }     
+  }
+  return factors;
+}
+```
+Output:
+```
+primeFactors(69); // [3, 23]
+```
+
+### Missing number
+```
+function missingNumber(arr){
+  var n = arr.length+1, 
+  sum = 0,
+  expectedSum = n* (n+1)/2;
+  
+  for(var i = 0, len = arr.length; i < len; i++){
+    sum += arr[i];
+  }
+  
+  return expectedSum - sum;
+}
+```
+Output:
+```
+missingNumber([5, 2, 6, 1, 3]); // 4
+```
+### Sum of two
+```
+function sumFinder(arr, sum){
+  var len = arr.length;
+  
+  for(var i =0; i<len-1; i++){  
+     for(var j = i+1;j<len; j++){
+        if (arr[i] + arr[j] == sum)
+            return true;
+     }
+  }
+  
+  return false;
+}
+```
+Output:
+```
+sumFinder([6,4,3,2,1,7], 9); // true
+sumFinder([6,4,3,2,1,7], 2); // false
+```
+
+### Counting Zeros
+```
+function countZero(n){
+  var count = 0;
+  while(n>0){
+   count += Math.floor(n/10);
+   n = n/10;
+  }
+  return count;
+}
+```
+Output:
+```
+countZero(2014); // 223
+```
+
+### factorialize a number
+```
+function factorialize(num) {
+  if (num < 0) {
+    return -1;
+  }
+  else if (num == 0){    
+    return 1;
+  }
+  else {
+    return (num * factorialize(num - 1));
+  }
+}
+
+var factorial = factorialize(5)
+console.log(factorial);
+```
+### Longest Word in a String
+#### Example - 1
+```
+function findLongestWordLength(str) {
+  var wordOne = str.split(' ');
+  var maxLength = 0;
+  for(var i = 0; i < wordOne.length; i++){
+    if(wordOne[i].length > maxLength){
+      maxLength = wordOne[i].length;
+    }
+  }
+  return maxLength;
+}
+
+var MaxWordLength = findLongestWordLength("this is Pramod")
+
+console.log(MaxWordLength);
+```
+#### Example - 2
+```
+function findLongestWordLength(str) {
+  let arrStr =  str.split(' ');
+  let longWord = 0;
+  for ( let item of arrStr) {
+    if(item.length > longWord) {
+      longWord = item.length;
+    }
+  }
+  return longWord
+}
+
+findLongestWordLength("word such as otorhinolaryngology");
+```
+
+### Callback Example 
+```
+function modifyArray(arr, callback) {
+  // do something to arr here
+  arr.push(100);
+  // then execute the callback function that was passed
+  callback();
+}
+
+var arr = [1, 2, 3, 4, 5];
+
+modifyArray(arr, function() {
+  console.log("array has been modified", arr);
+});
+
+//Output: [1,2,3,4,5,100]
+```
+### Reverse each word in the sentence
+```
+var string = "Welcome to this Javascript Guide!";
+
+// Output becomes !ediuG tpircsavaJ siht ot emocleW
+var reverseEntireSentence = reverseBySeparator(string, "");
+
+// Output becomes emocleW ot siht tpircsavaJ !ediuG
+var reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
+
+function reverseBySeparator(string, separator) {
+  return string.split(separator).reverse().join(separator);
+}
+```
+### How to empty an array?
+#### Method - 1
+```
+var arrayList = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
+var anotherArrayList = arrayList;  // Referenced arrayList by another variable
+arrayList.length = 0; // Empty the array by setting length to 0
+console.log(anotherArrayList); // Output []
+```
+
+#### Method - 2
+```
+var arrayList = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
+var anotherArrayList = arrayList;  // Referenced arrayList by another variable
+arrayList = []; // Empty the array
+console.log(anotherArrayList); // Output ['a', 'b', 'c', 'd', 'e', 'f']
+console.log(arrayList); // []
+```
+### Check integer
+```
+function isInt(num) {
+  return num % 1 === 0;
+}
+```
+Output:
+```
+console.log(isInt(4)); // true
+console.log(isInt(12.2)); // false
+console.log(isInt(0.3)); // false
+```
+
+### Create a private variable
+#### Example - 1
+```
+function func() {
+  var priv = "secret code";
+}
+
+console.log(priv); // throws error
+```
+#### Example - 2
+```
+function func() {
+  var priv = "secret code";
+  return function() {
+    return priv;
+  }
+}
+
+var getPriv = func();
+console.log(getPriv()); // => secret code
+```
+
+### What is Callback?
+A callback is a plain JavaScript function passed to some method as an argument or option. It is a function that is to be executed after another function has finished executing, hence the name ‘call back‘. In JavaScript, functions are objects. Because of this, functions can take functions as arguments, and can be returned by other functions.
+
+### What is Closure?
+Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope. It gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created. To use a closure, simply define a function inside another function and expose it.
+
+### Built-in methods
+**CharAt()** - It returns the character at the specified index.
+
+**Concat()** - It joins two or more strings.
+
+**indexOf()** - It returns the index within the calling String object of the first occurrence of the specified value.
+
+**forEach()** - It calls a function for each element in the array.
+
+**length()** - It returns the length of the string.
+
+**pop()** - It removes the last element from an array and returns that element.
+
+**push()** - It adds one or more elements to the end of an array and returns the new length of the array.
+
+**reverse()** - It reverses the order of the elements of an array.
+
+### Difference between null & undefined?
+Undefined means a variable has been declared but has not yet been assigned a value. On the other hand, null is an assignment value. 
+It can be assigned to a variable as a representation of no value. Also, undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object.
+
+### Error Name values in JavaScript?
+There are 6 types of Error Name values. Each one of them 
+is briefly explained as follows:
+
+* Eval Error – Thrown when coming across an error in 
+  eval() (Newer JS releases don’t have it)
+
+* Range Error – Generated when a number outside the 
+  specified range is used
+
+* Reference Error – It comes into play when an undeclared 
+  variable is used.
+
+* Syntax Error – When the incorrect syntax is used, we get 
+  this error
+
+* Type Error – This error is thrown when a value outside 
+  the range of data types is tried to be used.
+
+* URI Error – Generated due to the use of illegal characters
