@@ -181,7 +181,7 @@ Output: Lemon,Pineapple,Banana,Orange,Apple,Mango
 - The unshift() method adds new elements to the beginning of an array.
 - The unshift() method overwrites the original array.
 
-## javascript - Objects
+## Javascript - Objects
 ### 1. Possible ways to create objects in JavaScript
 1. Object constructor:
 ```
