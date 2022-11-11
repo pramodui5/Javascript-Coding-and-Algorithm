@@ -184,27 +184,49 @@ Output: Lemon,Pineapple,Banana,Orange,Apple,Mango
 ## javascript - Objects
 ### Possible ways to create objects in JavaScript
 1. Object constructor:
-	```
-  var object = new Object();
-  ```
+```
+ var object = new Object();
+ ```
 2. Object's create method:
-	```
-  var object = Object.create(null);
-  ```
+```
+ var object = Object.create(null);
+ ```
 3. Object literal syntax:
-	```
-  var object = { name: "Sudheer", age: 34 };
-  ```
+```
+ var object = { name: "Sudheer", age: 34 };
+ ```
 4. ES6 Class syntax:
-	```
-  class Person {
-   		constructor(name) {  this.name = name; }
-	}
-	var object = new Person("Sudheer");
-  ```
+```
+class Person {
+   constructor(name) {  this.name = name; }
+}
+var object = new Person("Sudheer");
+```
 5. Singleton pattern:
-	```
-  var object = new function(){
-   		this.name = "Sudheer";
-	}
-  ```
+```
+var object = new function(){
+   this.name = "Sudheer";
+}
+```
+### Math Object
+``` Math.round(x) ```	Returns x rounded to its nearest integer
+
+``` Math.ceil(x) ```	Returns x rounded up to its nearest integer
+
+``` Math.floor(x) ```	Returns x rounded down to its nearest integer
+
+``` Math.trunc(x) ```	Returns the integer part of x (new in ES6)
+
+``` Math.round(4.6); ```
+
+- The pop() method removes the last element of an array.
+- The pop() method changes the original array.
+- The pop() method returns the removed element.
+
+### JSON and its operations
+Parsing: Converting a string to a native object
+	``` JSON.parse(text) ```
+
+converting a native object to a string
+	``` JSON.stringify(object) ```
+	
