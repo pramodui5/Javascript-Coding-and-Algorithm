@@ -230,3 +230,72 @@ Parsing: Converting a string to a native object
 converting a native object to a string
 	``` JSON.stringify(object) ```
 	
+### slice() Vs Splice()
+#### Slice					
+- Doesn't modify the original array(immutable)
+
+- Returns the subset of original array
+
+- Used to pick the elements from array	
+
+#### Splice
+- Doesn't modify the original array(immutable)
+
+- Returns the subset of original array
+
+- Used to pick the elements from array	
+
+### Higher order function
+Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
+```
+const firstOrderFunc = () => console.log ('Hello, I am a First order function');
+const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
+higherOrder(firstOrderFunc);
+```
+### Arrow Functions
+Arrow functions allows a short syntax for writing function expressions.
+You don't need the function keyword, the return keyword, and the curly brackets.
+```
+// ES5
+var x = function(x, y) {
+  return x * y;
+}
+
+// ES6
+const x = (x, y) => x * y;
+```
+### Closures
+A closure is the combination of a function and the lexical environment within which that function was declared. 
+It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
+
+1. Own scope where variables defined between its curly brackets
+2. Outer function’s variables
+3. Global variables
+
+#### Example - 1
+```
+function add(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+var add5 = add(5);
+var add10 = add(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+```
+#### Example - 2
+```
+function displayName() {
+  var name = 'Mozilla';
+  function myName() {
+    alert(name);
+  }
+  return myName;
+}
+
+var showName = displayName();
+showName();
+```
