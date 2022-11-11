@@ -230,7 +230,7 @@ Parsing: Converting a string to a native object
 converting a native object to a string
 	``` JSON.stringify(object) ```
 	
-### 4. slice() Vs Splice()
+### 4. Slice() Vs Splice()
 #### Slice					
 - Doesn't modify the original array(immutable)
 
