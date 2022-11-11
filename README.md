@@ -182,7 +182,7 @@ Output: Lemon,Pineapple,Banana,Orange,Apple,Mango
 - The unshift() method overwrites the original array.
 
 ## javascript - Objects
-### Possible ways to create objects in JavaScript
+### 1. Possible ways to create objects in JavaScript
 1. Object constructor:
 ```
  var object = new Object();
@@ -208,7 +208,7 @@ var object = new function(){
    this.name = "Sudheer";
 }
 ```
-### Math Object
+### 2. Math Object
 ``` Math.round(x) ```	Returns x rounded to its nearest integer
 
 ``` Math.ceil(x) ```	Returns x rounded up to its nearest integer
@@ -223,14 +223,14 @@ var object = new function(){
 - The pop() method changes the original array.
 - The pop() method returns the removed element.
 
-### JSON and its operations
+### 3. JSON and its operations
 Parsing: Converting a string to a native object
 	``` JSON.parse(text) ```
 
 converting a native object to a string
 	``` JSON.stringify(object) ```
 	
-### slice() Vs Splice()
+### 4. slice() Vs Splice()
 #### Slice					
 - Doesn't modify the original array(immutable)
 
@@ -245,14 +245,14 @@ converting a native object to a string
 
 - Used to pick the elements from array	
 
-### Higher order function
+### 5. Higher order function
 Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
 ```
 const firstOrderFunc = () => console.log ('Hello, I am a First order function');
 const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
 higherOrder(firstOrderFunc);
 ```
-### Arrow Functions
+### 6. Arrow Functions
 Arrow functions allows a short syntax for writing function expressions.
 You don't need the function keyword, the return keyword, and the curly brackets.
 ```
@@ -264,7 +264,7 @@ var x = function(x, y) {
 // ES6
 const x = (x, y) => x * y;
 ```
-### Closures
+### 7. Closures
 A closure is the combination of a function and the lexical environment within which that function was declared. 
 It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
 
@@ -299,7 +299,7 @@ function displayName() {
 var showName = displayName();
 showName();
 ```
-### Array.prototype.flat()
+### 8. Array.prototype.flat()
 ```
 const arr1 = [0, 1, 2, [3, 4]];
 
@@ -313,7 +313,7 @@ console.log(arr2.flat(2));
 ```
 - The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
 
-### Generator Function
+### 9. Generator Function
 ```
 function* generator(i) {
   yield i;
@@ -327,7 +327,7 @@ console.log(gen.next().value);
 ```
 - The function* declaration (function keyword followed by an asterisk) defines a generator function, which returns a Generator object.
 
-### call()
+### 10. call()
 ```
 const person = {
   fullName: function() {
@@ -347,7 +347,7 @@ person.fullName.apply(person1);
 - The call() method takes arguments separately.
 - The apply() method takes arguments as an array.
 
-### apply()
+### 11. apply()
 ```
 const numbers = [5, 6, 2, 3, 7];
 const max = Math.max.apply(null, numbers);
@@ -363,7 +363,7 @@ console.log(min);
 - The call() method takes arguments separately.
 - The apply() method takes arguments as an array.
 
-### bind()
+### 12. bind()
 ```
 const module = {
   x: 42,
@@ -382,7 +382,7 @@ console.log(boundGetX());
 ```
 - The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
 
-### Callbacks
+### 13. Callbacks
 ```
 function myDisplayer(some) {
   document.getElementById("demo").innerHTML = some;
@@ -397,7 +397,7 @@ myCalculator(5, 5, myDisplayer);
 ```
 - A callback is a function passed as an argument to another function.
 
-### Promise
+### 14. Promise
 ```
 let myPromise = new Promise(function(myResolve, myReject) {
 // "Producing Code" (May take some time)
@@ -417,7 +417,7 @@ myPromise.then(
 - When a Promise object is "fulfilled", the result is a value.
 - When a Promise object is "rejected", the result is an error object.
 
-### Async/Await
+### 15. Async/Await
 ```
 async function myFunction() {
   return "Hello";
@@ -443,7 +443,7 @@ myDisplay();
 - Very often we will not need a reject function.
 
 ## javascript - Algorithm
-### Remove Duplicate
+### 1. Remove Duplicate
 ```
 function removeDuplicate(arr){
   var exists ={},
@@ -465,7 +465,7 @@ function removeDuplicate(arr){
 removeDuplicate([1,3,3,3,1,5,6,7,8,1]);
   = [1, 3, 5, 6, 7, 8]
   ```
-### Fibonacci
+### 2. Fibonacci
 #### Example - 1
 ```
 function fibonacci(n){
@@ -497,7 +497,7 @@ function fibonacci(n){
 ```
 fibonacci(12); // 144
 ```
-### Swap number without temp
+### 3. Swap number without temp
 ```
 function swapNumb(a, b){
   console.log('before swap: ','a: ', a, 'b: ', b);
@@ -514,7 +514,7 @@ swapNumb(2, 3);
    = after swap:  a:  3 b:  2
 ```
 
-### String reverse
+### 4. String reverse
 #### Example - 1
 ```
 function reverse(str){
@@ -552,14 +552,14 @@ function reverse(str){
   return rtnStr.join('');
 }
 ```
-### Reverse words
+### 5. Reverse words
 A quick solution with build in methods:
 ```
 function reverseWords(str){
   return str.split(' ').reverse();
 }
 ```
-### Check palindrome
+### 6. Check palindrome
 #### Example -1
 ```
 function isPalindrome(str){
@@ -583,7 +583,7 @@ function checkPalindrom(str) {
     return str == str.split('').reverse().join('');
 }  
 ```
-### Check Prime
+### 7. Check Prime
 ```
 function isPrime(n){
   var divisor = 2;
@@ -603,7 +603,7 @@ isPrime(137); // true
 isPrime(237); // false
 ```
 
-### Prime Factors
+### 8. Prime Factors
 ```
 function primeFactors(n){
   var factors = [], 
@@ -626,7 +626,7 @@ Output:
 primeFactors(69); // [3, 23]
 ```
 
-### Missing number
+### 9. Missing number
 ```
 function missingNumber(arr){
   var n = arr.length+1, 
@@ -644,7 +644,7 @@ Output:
 ```
 missingNumber([5, 2, 6, 1, 3]); // 4
 ```
-### Sum of two
+### 10. Sum of two
 ```
 function sumFinder(arr, sum){
   var len = arr.length;
@@ -665,7 +665,7 @@ sumFinder([6,4,3,2,1,7], 9); // true
 sumFinder([6,4,3,2,1,7], 2); // false
 ```
 
-### Counting Zeros
+### 11. Counting Zeros
 ```
 function countZero(n){
   var count = 0;
@@ -681,7 +681,7 @@ Output:
 countZero(2014); // 223
 ```
 
-### factorialize a number
+### 12. Factorialize a number
 ```
 function factorialize(num) {
   if (num < 0) {
@@ -698,7 +698,7 @@ function factorialize(num) {
 var factorial = factorialize(5)
 console.log(factorial);
 ```
-### Longest Word in a String
+### 13. Longest Word in a String
 #### Example - 1
 ```
 function findLongestWordLength(str) {
@@ -732,7 +732,7 @@ function findLongestWordLength(str) {
 findLongestWordLength("word such as otorhinolaryngology");
 ```
 
-### Callback Example 
+### 14. Callback Example 
 ```
 function modifyArray(arr, callback) {
   // do something to arr here
@@ -749,7 +749,7 @@ modifyArray(arr, function() {
 
 //Output: [1,2,3,4,5,100]
 ```
-### Reverse each word in the sentence
+### 15. Reverse each word in the sentence
 ```
 var string = "Welcome to this Javascript Guide!";
 
@@ -763,7 +763,7 @@ function reverseBySeparator(string, separator) {
   return string.split(separator).reverse().join(separator);
 }
 ```
-### How to empty an array?
+### 16. How to empty an array?
 #### Method - 1
 ```
 var arrayList = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
@@ -780,7 +780,7 @@ arrayList = []; // Empty the array
 console.log(anotherArrayList); // Output ['a', 'b', 'c', 'd', 'e', 'f']
 console.log(arrayList); // []
 ```
-### Check integer
+### 17. Check integer
 ```
 function isInt(num) {
   return num % 1 === 0;
@@ -793,7 +793,7 @@ console.log(isInt(12.2)); // false
 console.log(isInt(0.3)); // false
 ```
 
-### Create a private variable
+### 18. Create a private variable
 #### Example - 1
 ```
 function func() {
@@ -815,13 +815,13 @@ var getPriv = func();
 console.log(getPriv()); // => secret code
 ```
 
-### What is Callback?
+### 19. What is Callback?
 A callback is a plain JavaScript function passed to some method as an argument or option. It is a function that is to be executed after another function has finished executing, hence the name ‘call back‘. In JavaScript, functions are objects. Because of this, functions can take functions as arguments, and can be returned by other functions.
 
-### What is Closure?
+### 20. What is Closure?
 Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope. It gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created. To use a closure, simply define a function inside another function and expose it.
 
-### Built-in methods
+### 21. Built-in methods
 **CharAt()** - It returns the character at the specified index.
 
 **Concat()** - It joins two or more strings.
@@ -838,11 +838,11 @@ Closures are created whenever a variable that is defined outside the current sco
 
 **reverse()** - It reverses the order of the elements of an array.
 
-### Difference between null & undefined?
+### 22. Difference between null & undefined?
 Undefined means a variable has been declared but has not yet been assigned a value. On the other hand, null is an assignment value. 
 It can be assigned to a variable as a representation of no value. Also, undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object.
 
-### Error Name values in JavaScript?
+### 23. Error Name values in JavaScript?
 There are 6 types of Error Name values. Each one of them 
 is briefly explained as follows:
 
