@@ -480,8 +480,8 @@ function fibonacci(n){
  return fibo[n];
 } 
 ```
-```
 **Output:**
+```
 fibonacci(12); // 144
 ```
 #### Example - 2
@@ -493,7 +493,7 @@ function fibonacci(n){
     return fibonacci(n-1) + fibonacci (n-2);  
 }
 ```
-```
 **Output:**
+```
 fibonacci(12); // 144
 ```
