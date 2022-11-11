@@ -442,7 +442,7 @@ myDisplay();
 - The two arguments (resolve and reject) are pre-defined by JavaScript.
 - Very often we will not need a reject function.
 
-## javascript - Algorithm
+## Javascript - Algorithm
 ### 1. Remove Duplicate
 ```
 function removeDuplicate(arr){
