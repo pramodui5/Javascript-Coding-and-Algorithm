@@ -299,3 +299,169 @@ function displayName() {
 var showName = displayName();
 showName();
 ```
+### Array.prototype.flat()
+```
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+// expected output: [0, 1, 2, 3, 4]
+
+const arr2 = [0, 1, 2, [[[3, 4]]]];
+
+console.log(arr2.flat(2));
+// expected output: [0, 1, 2, [3, 4]]
+```
+- The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+### Generator Function
+```
+function* generator(i) {
+  yield i;
+  yield i + 10;
+}
+const gen = generator(10);
+console.log(gen.next().value);
+// expected output: 10
+console.log(gen.next().value);
+// expected output: 20
+```
+- The function* declaration (function keyword followed by an asterisk) defines a generator function, which returns a Generator object.
+
+### call()
+```
+const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const person1 = {
+  firstName: "Mary",
+  lastName: "Doe"
+}
+
+// This will return "Mary Doe":
+person.fullName.apply(person1);
+```
+- The call() method calls a function with a given this value and arguments provided individually.
+- The call() method takes arguments separately.
+- The apply() method takes arguments as an array.
+
+### apply()
+```
+const numbers = [5, 6, 2, 3, 7];
+const max = Math.max.apply(null, numbers);
+
+console.log(max);
+// expected output: 7
+
+const min = Math.min.apply(null, numbers);
+console.log(min);
+// expected output: 2
+```
+- The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+- The call() method takes arguments separately.
+- The apply() method takes arguments as an array.
+
+### bind()
+```
+const module = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+};
+
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// expected output: 42
+```
+- The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+### Callbacks
+```
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+
+myCalculator(5, 5, myDisplayer);
+```
+- A callback is a function passed as an argument to another function.
+
+### Promise
+```
+let myPromise = new Promise(function(myResolve, myReject) {
+// "Producing Code" (May take some time)
+
+  myResolve(); // when successful
+  myReject();  // when error
+});
+
+// "Consuming Code" (Must wait for a fulfilled Promise)
+myPromise.then(
+  function(value) { /* code if successful */ },
+  function(error) { /* code if some error */ }
+);
+```
+- The Promise object supports two properties: state and result.
+- While a Promise object is "pending" (working), the result is undefined.
+- When a Promise object is "fulfilled", the result is a value.
+- When a Promise object is "rejected", the result is an error object.
+
+### Async/Await
+```
+async function myFunction() {
+  return "Hello";
+}
+```
+```
+let value = await promise;
+```
+```
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve, reject) {
+    resolve("I love You !!");
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+```
+- async makes a function return a Promise
+- await makes a function wait for a Promise
+- The await keyword can only be used inside an async function.
+- The two arguments (resolve and reject) are pre-defined by JavaScript.
+- Very often we will not need a reject function.
+
+## javascript - Algorithm
+### Remove Duplicate
+```
+function removeDuplicate(arr){
+  var exists ={},
+      outArr = [], 
+      elm;
+
+  for(var i =0; i<arr.length; i++){
+    elm = arr[i];
+    if(!exists[elm]){
+      outArr.push(elm);
+      exists[elm] = true;
+   }
+  }
+  return outArr;
+}
+```
+```
+*Output:*
+removeDuplicate([1,3,3,3,1,5,6,7,8,1]);
+  = [1, 3, 5, 6, 7, 8]
+  ```
