@@ -69,9 +69,10 @@ const numbers = [4, 9, 16, 25];
 const newArr = numbers.map(Math.sqrt)
 console.log(newArr);
 ```
-- The indexOf() method returns the first index (position) of a specified value.
-- The indexOf() method returns -1 if the value is not found.
-- The indexOf() method starts at a specified index and searches from left to right.
+- map() creates a new array from calling a function for every array element.
+- map() calls a function once for each element in an array.
+- map() does not execute the function for empty elements.
+- map() does not change the original array.
 
 ### 7. reduce()
 ```
